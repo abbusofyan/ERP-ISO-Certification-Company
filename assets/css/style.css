@@ -1,0 +1,147 @@
+.login-page-background {
+    background-image: url('../img/login.png');
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.user-info-wrapper .user-info-title {
+    width: 11.785rem;
+}
+
+.user-info-wrapper .asset-info-title {
+    width: 15rem;
+}
+
+.user-total-numbers .color-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.714rem;
+    width: 2.714rem;
+    border-radius: 0.357rem;
+}
+
+.active-menu {
+  border-right: solid 0.3em gold;
+  border-right-color: #AE1F27;
+  width: auto;
+  color: #AE1F27;
+}
+
+.bg-blue {
+	background-color: #4660f2;
+}
+
+.bg-purple {
+	background-color: #B55E9B;
+}
+
+.text-purple {
+	color: #670FF2;
+}
+
+.border-purple {
+	border: 1px solid #670FF2 !important;
+}
+
+.bg-yellow {
+	background-color: #FAF9E3;
+}
+
+.text-yellow {
+	color: #A8A11F;
+}
+
+.text-dark-blue {
+	color: #027AFB;
+}
+
+.border-dark-blue {
+	border: 1px solid #027AFB !important;
+}
+
+.text-orange {
+	color: #f47830;
+}
+
+.bg-grey {
+	background-color: #E4E4E4;
+}
+
+.bg-orange {
+	background-color: #f47830;
+}
+
+.border-orange {
+	border: 1px solid #f47830 !important;
+}
+
+.bg-red {
+	background-color: #fc6262;
+}
+
+.btn-primary:focus {
+	background-color: #AE1F27 !important;
+}
+
+.main-menu.menu-light .navigation > li.active > a {
+    background: transparent !important;
+    box-shadow: 0 0 0 0;
+    color: #000;
+    font-weight: 400;
+    border-radius: 4px;
+}
+
+.main-menu.menu-light .navigation > li ul .active > a {
+    color: #000;
+}
+
+.main-menu.menu-light .navigation > li ul .active {
+	background: transparent !important;
+    box-shadow: 0 0 0 0;
+    font-weight: 400;
+    border-radius: 4px;
+}
+
+.btn-light:not(:disabled):not(.disabled).active, .show > .btn-light.dropdown-toggle {
+    color: #2a2e30;
+    background-color: #E7DDDD !important;
+    border-color: #d6d6d6;
+}
+
+.nav-tabs .nav-link:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: transparent !important;
+    transition: transform 0.3s;
+    transform: translate3d(0, 150%, 0);
+}
+
+a.text-primary:hover, a.text-primary:focus {
+    color: #AE1F27 !important;
+	background-color: #E7DDDD;
+}
+
+.notification .badge {
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	left: 31px;
+	top: 8.5px;
+	background: #AE1F27;
+
+	position: absolute;
+	padding: 1px 1px;
+	border-radius: 50%;
+	color: white;
+}
+
+.vr {
+  border-left: 1px solid black;
+  margin-left: -3px;
+}

@@ -1,0 +1,16 @@
+{
+    "name": "asa/app",
+    "version": "1.0.0",
+    "type": "library",
+    "description": "Advanced System Assurance Web App.",
+    "require": {
+        "phpoffice/phpspreadsheet": "^2.0",
+        "dompdf/dompdf": "^2.0"
+    },
+    "license": "Copyright © 2023 Web Imp Pte Ltd",
+    "authors": [{
+        "name": "Lawrence Low",
+        "email": "lawrence.low@webimp.com.sg"
+    }],
+    "minimum-stability": "stable"
+}

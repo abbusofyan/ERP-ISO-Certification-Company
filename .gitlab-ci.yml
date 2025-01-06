@@ -1,0 +1,81 @@
+####################
+# !VARIABLES
+####################
+variables:
+    STAGING_ENV: "https://staging-dot-hallowed-oven-372904.appspot.com/"
+    PRODUCTION_ENV: "https://cvs.asasg.com/"
+
+
+
+
+####################
+# !STAGES
+####################
+stages:
+    - Build
+    - Deploy
+
+
+
+####################
+# !BUILD
+####################
+Composer:
+    image: edbizarro/gitlab-ci-pipeline-php:8.0-alpine
+    stage: Build
+    only:
+        - staging
+        - production
+    when: always
+    tags:
+        - gitlab-org-docker
+    script:
+        - composer install
+    artifacts:
+        when: on_success
+        expire_in: 1 day
+        paths:
+            - $CI_PROJECT_DIR/vendor/
+
+
+
+####################
+# !DEPLOY
+####################
+Staging:
+    image: google/cloud-sdk
+    stage: Deploy
+    only:
+        - staging
+    when: on_success
+    tags:
+        - gitlab-org-docker
+    script:
+        - gcloud auth activate-service-account --key-file='gcloud-key.json'
+        - gcloud config set project hallowed-oven-372904
+        - gcloud config set app/promote_by_default false
+        - gcloud app deploy app-staging.yaml -v staging -q
+    dependencies:
+        - Composer
+    environment:
+        name: Staging
+        url: $STAGING_ENV
+
+Production:
+    image: google/cloud-sdk
+    stage: Deploy
+    only:
+        - production
+    when: manual
+    tags:
+        - gitlab-org-docker
+    script:
+        - gcloud auth activate-service-account --key-file='gcloud-key.json'
+        - gcloud config set project hallowed-oven-372904
+        - gcloud config set app/promote_by_default false
+        - gcloud app deploy app-production.yaml -v production -q --promote
+    dependencies:
+        - Composer
+    environment:
+        name: Production
+        url: $PRODUCTION_ENV

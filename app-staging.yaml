@@ -1,0 +1,29 @@
+runtime: php81
+default_expiration: "5d"
+instance_class: F1
+service: default
+
+inbound_services:
+    - warmup
+
+automatic_scaling:
+    min_idle_instances: 0
+    max_idle_instances: 1
+    max_instances: 1
+
+env_variables:
+    WI_ENV: 'staging'
+    SERVER_SOFTWARE: "Google App Engine"
+    GOOGLE_CLOUD_PROJECT: "hallowed-oven-372904"
+    GOOGLE_APPLICATION_CREDENTIALS: "gcloud-key.json"
+
+handlers:
+    - url: /assets/*
+      static_dir: assets
+    - url: /app-assets/data/locales/*
+      static_dir: app-assets/data/locales
+    - url: /_ah/warmup
+      script: auto
+    - url: /.*
+      script: auto
+      secure: optional
