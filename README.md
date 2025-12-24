@@ -51,10 +51,10 @@ The system is designed to manage certification workflows, financial operations, 
 
 ## 🖥 Screenshots
 
-### ERP Dashboard
+### Login Page
 ![ERP Dashboard](https://github.com/user-attachments/assets/e7adea84-5d9d-4bd7-8006-9a5235cfd042)
 
-### Certification & Accreditation Module
+### Dashboard Menu
 ![Certification Module](https://github.com/user-attachments/assets/38c1b54f-b055-41be-9c53-2db2fbe7b538)
 
 ---
